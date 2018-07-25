@@ -36,8 +36,8 @@ shinyServer(function(input, output, session) {
     
     output$table <- DT::renderDataTable(
         DT::datatable({
-            nearPoints(swiid_source, input$plot_click, xvar = "year", yvar = "gini", allRows = TRUE) %>% 
-            #swiid_source %>% 
+            # nearPoints(swiid_source, input$plot_click, xvar = "year", yvar = "gini") %>% 
+            swiid_source %>% 
                 filter(country == input$country & 
                            year >= input$dates[1] &
                            year <= input$dates[2]) %>%
