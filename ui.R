@@ -8,17 +8,22 @@ shinyUI(fluidPage(
                               }
                               "))),
     fluidRow(        
-        column(2,
+        column(3,
                
                selectInput("country", label="Country", "United States"), 
                
-               sliderInput("dates", label="Select Years:",
+               sliderInput("dates", label="Years",
                            min = 1960, max = 2017, 
                            value = c(1975, 2017), sep = "")
         ),
-        
-        column(7,
-               plotOutput("plot1")
+   
+        column(9,
+               plotOutput("plot",
+                          click = "plot_click")
         )
+    ),
+    
+    fluidRow(
+        DT::dataTableOutput("table")
     )
 ))
