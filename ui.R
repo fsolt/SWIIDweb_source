@@ -2,19 +2,17 @@ library(shiny)
 
 shinyUI(fluidPage( 
     helpText(" "),
-    tags$head(tags$style(HTML("
-                              .selectize-input, .selectize-dropdown {
-                              font-size: 90%;
-                              }
-                              "))),
+
     fluidRow(        
         column(3,
                
-               selectInput("country", label="Country", "United States"), 
+               uiOutput("countryControl"),
                
-               sliderInput("dates", label="Years",
-                           min = 1960, max = 2017, 
-                           value = c(1975, 2017), sep = "")
+               uiOutput("yearControl"),
+               
+               helpText("Click on any point in a series to display only that series in the table below."),
+               
+               helpText("Please note that the table's source links may download a spreadsheet or PDF file.")
         ),
    
         column(9,
