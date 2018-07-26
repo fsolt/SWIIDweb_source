@@ -23,6 +23,10 @@ shinyUI(fluidPage(
         )
     ),
     
+    # fluidRow(
+    #     verbatimTextOutput("click_info")
+    # ),
+    
     fluidRow(
         DT::dataTableOutput("table")
     )
